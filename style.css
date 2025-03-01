@@ -1095,7 +1095,7 @@ footer p {
 
 
 
-/* THEME TOGGLE BUTTON */
+/* THEME TOGGLE BUTTON (Floating) */
 #theme-toggle {
   position: fixed;
   bottom: 20px;
@@ -1110,12 +1110,18 @@ footer p {
   align-items: center;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
-  z-index: 1000;
+  z-index: 9999 !important; /* Ensure it stays on top */
+}
+
+#theme-toggle img {
+  width: 30px;
+  height: 30px;
 }
 
 #theme-toggle:hover {
   transform: scale(1.1);
 }
+
 
 #theme-icon {
   width: 30px;
