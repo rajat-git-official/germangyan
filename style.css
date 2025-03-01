@@ -1087,3 +1087,74 @@ footer p {
     max-width: 100%;
   }
 }
+
+
+
+
+
+
+
+
+/* THEME TOGGLE BUTTON */
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+#theme-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* DARK MODE */
+.dark-mode {
+  background: #121212;
+  color: #ffffff;
+}
+
+.dark-mode a {
+  color: #1e90ff;
+}
+
+.dark-mode .details-container, 
+.dark-mode .testimonial-card,
+.dark-mode .story-card, 
+.dark-mode .blog-card, 
+.dark-mode .contact-info, 
+.dark-mode .social-media {
+  background: #1e1e1e;
+  color: white;
+  border-color: #333;
+}
+
+.dark-mode .faq-answer {
+  background: #333;
+  color: white;
+}
+
+.dark-mode .btn-submit, 
+.dark-mode .btn-read-more {
+  background: #007bff;
+  color: white;
+}
+
+.dark-mode .btn-submit:hover, 
+.dark-mode .btn-read-more:hover {
+  background: #0056b3;
+}

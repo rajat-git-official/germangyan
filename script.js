@@ -122,3 +122,36 @@ document.querySelectorAll(".faq-question").forEach(button => {
     answer.style.display = answer.style.display === "block" ? "none" : "block";
   });
 });
+
+
+
+
+function toggleTheme() {
+  let body = document.body;
+  let themeIcon = document.getElementById("theme-icon");
+
+  // Toggle Dark Mode
+  body.classList.toggle("dark-mode");
+
+  // Check if Dark Mode is Active
+  if (body.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+    themeIcon.src = "./assets/moon.png"; // Change to Moon Icon
+  } else {
+    localStorage.setItem("theme", "light");
+    themeIcon.src = "./assets/sun.png"; // Change to Sun Icon
+  }
+}
+
+// Preserve User Theme Preference on Page Load
+window.onload = function () {
+  let savedTheme = localStorage.getItem("theme");
+  let themeIcon = document.getElementById("theme-icon");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeIcon.src = "./assets/moon.png"; // Set Moon Icon
+  } else {
+    themeIcon.src = "./assets/sun.png"; // Set Sun Icon
+  }
+};
