@@ -1,9 +1,18 @@
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
+  
   menu.classList.toggle("open");
   icon.classList.toggle("open");
+
+  // Ensure full menu height is visible
+  if (menu.classList.contains("open")) {
+    menu.style.maxHeight = "500px"; // Increase if needed
+  } else {
+    menu.style.maxHeight = "0";
+  }
 }
+
 
 
 function openModal() {
