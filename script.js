@@ -155,3 +155,19 @@ window.onload = function () {
     themeIcon.src = "./assets/sun.png"; // Set Sun Icon
   }
 };
+
+
+
+// Initialize AOS animations
+AOS.init({
+  duration: 800, // Animation duration in milliseconds
+  once: true,     // Only animate once
+});
+
+
+
+// Toggle dropdown in mobile view
+function toggleDropdown() {
+  const dropdown = document.querySelector(".dropdown");
+  dropdown.classList.toggle("active");
+}

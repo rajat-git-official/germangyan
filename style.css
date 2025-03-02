@@ -270,74 +270,138 @@ section {
 }
 
 /* ABOUT SECTION */
-
 #about {
-  position: relative;
-}
-
-.about-containers {
-  gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.about-details-container {
-  justify-content: center;
-  flex-direction: column;
-}
-
-.about-containers,
-.about-details-container {
-  display: flex;
-}
-
-/* .about-pic {
-  border-radius: 2rem;
-} */
-
-#about .section__pic-container {
-  display: flex;
-  justify-content: center; /* Centers image */
-  align-items: center; /* Aligns image properly */
-  width: 100%; /* Ensures it takes full width */
-}
-
-#about .about-pic {
-  width: 100%; /* Makes it responsive */
-  max-width: 800px; /* Increase image size */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 2rem; /* Keeps rounded effect */
-}
-
-
-
-
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
-}
-
-.details-container {
-  padding: 1.5rem;
-  flex: 1;
-  background: white;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
   text-align: center;
+  padding: 4vh 10rem;
+  background: #f9f9f9;
+  border-radius: 10px;
 }
 
-.section-container {
-  gap: 4rem;
-  height: 80%;
+/* ABOUT CONTAINER */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
+/* ABOUT IMAGE */
+.about-img-container {
+  flex: 1;
+  max-width: 500px;
 }
+
+.about-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ABOUT CARDS */
+.about-cards {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.about-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.about-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.values-list {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.values-list li {
+  margin-bottom: 5px;
+}
+
+/* LANGUAGE COURSES */
+.language-courses {
+  margin-top: 50px;
+}
+
+.course-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.course-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.course-card {
+  background: #007bff;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  background: #0056b3;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1024px) {
+  #about {
+    padding: 4vh 5rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img-container {
+    max-width: 100%;
+  }
+
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-card {
+    width: 90%;
+  }
+
+  .course-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 /* EXPERIENCE SECTION */
 
@@ -1163,4 +1227,80 @@ footer p {
 .dark-mode .btn-submit:hover, 
 .dark-mode .btn-read-more:hover {
   background: #0056b3;
+}
+
+
+
+
+
+
+
+
+/* DESKTOP NAVBAR DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 200px;
+}
+
+.dropdown-menu li {
+  padding: 8px 15px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+/* SHOW DROPDOWN ON HOVER */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* MOBILE NAVBAR DROPDOWN */
+.dropdown-toggle {
+  cursor: pointer;
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown.active .dropdown-menu {
+  display: block;
+}
+
+/* MOBILE NAVIGATION FIX */
+@media screen and (max-width: 768px) {
+  .dropdown-menu {
+    position: relative;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown-menu li {
+    padding: 8px;
+  }
 }

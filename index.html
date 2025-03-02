@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>German Gyan</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <!-- AOS Library for Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
   </head>
   <body>
     <nav id="desktop-nav">
@@ -17,14 +21,23 @@
           <li><a href="#experience">Get Started</a></li>
           <li><a href="#courses">Our Courses</a></li>
           <li><a href="#blogs">Blogs</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#success-stories">Success Stories</a></li>
-          <li><a href="#faqs">FAQs</a></li>
+    
+          <!-- Dropdown Menu -->
+          <li class="dropdown">
+            <a href="#">Our Community ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#success-stories">Success Stories</a></li>
+              <li><a href="#faqs">FAQs</a></li>
+            </ul>
+          </li>
+    
           <li><a href="#internship">Internship</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
+    
     <nav id="hamburger-nav">
       <div class="logo">German Gyan</div>
       <div class="hamburger-menu">
@@ -38,14 +51,23 @@
           <li><a href="#experience" onclick="toggleMenu()">Get Started</a></li>
           <li><a href="#courses" onclick="toggleMenu()">Our Courses</a></li>
           <li><a href="#blogs" onclick="toggleMenu()">Blogs</a></li>
-          <li><a href="#testimonials" onclick="toggleMenu()">Testimonials</a></li>
-          <li><a href="#success-stories" onclick="toggleMenu()">Success Stories</a></li>
-          <li><a href="#faqs" onclick="toggleMenu()">FAQs</a></li>
+    
+          <!-- Dropdown in Mobile -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Our Community ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="#testimonials" onclick="toggleMenu()">Testimonials</a></li>
+              <li><a href="#success-stories" onclick="toggleMenu()">Success Stories</a></li>
+              <li><a href="#faqs" onclick="toggleMenu()">FAQs</a></li>
+            </ul>
+          </li>
+    
           <li><a href="#internship" onclick="toggleMenu()">Internship</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
     </nav>
+    
     <section id="profile">
       <div class="section__pic-container">
         <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
@@ -93,225 +115,89 @@
         </div>
       </div>
     </section>
+    
+    
     <section id="about">
-      <p class="section__text__p1">About</p>
-      <h1 class="title">About</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
+      <p class="section__text__p1">Who We Are</p>
+      <h1 class="title">About German Gyan</h1>
+      
+      <div class="about-container">
+    
+        <!-- About Image -->
+        <div class="about-img-container">
+          <img src="./assets/about-pic.png" alt="About Us" class="about-img">
         </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <!-- <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              /> -->
-              <h3>🎯 Our Mission</h3>
-              <p>At German Gyan, our mission is to make German language learning accessible, engaging, and impactful for everyone. We are committed to empowering learners of all ages to achieve fluency in German, unlocking new career opportunities, personal growth, and global connections. Through expert-led courses, flexible learning options, and a supportive community, we strive to make language education a rewarding and enjoyable journey✨</p>
-            </div>
-            <div class="details-container">
-              <!-- <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              /> -->
-              <h3>🌟 Our Vision</h3>
-              <p>Our vision is to establish German Gyan as the leading platform for German language education, known for its innovative teaching methods, exceptional standards, and student-first approach. We aspire to create a world where language is not a barrier but a bridge—where every learner can confidently use German to achieve their goals in academia, career, and personal✨</p>
-            </div>
-          </div>
-          <div class="text-container">
+    
+        <!-- About Cards -->
+        <div class="about-cards">
+          
+          <div class="about-card" data-aos="fade-up">
+            <img src="./assets/mission.png" alt="Mission Icon" class="about-icon">
+            <h2>🎯 Our Mission</h2>
             <p>
-         
+              At German Gyan, our mission is to make **German language learning** accessible, engaging, and impactful. 
+              We empower learners to achieve **fluency** for career opportunities, personal growth, and global connections. 
+              Our expert-led courses, flexible learning, and community-driven approach make language education enjoyable. 🇩🇪✨
             </p>
           </div>
+    
+          <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="./assets/vision.png" alt="Vision Icon" class="about-icon">
+            <h2>🌟 Our Vision</h2>
+            <p>
+              Our vision is to establish **German Gyan** as the leading platform for learning **German**, known for 
+              **innovative teaching methods, exceptional standards,** and a **student-first approach**.
+            </p>
+          </div>
+    
+          <div class="about-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="./assets/values.png" alt="Values Icon" class="about-icon">
+            <h2>🤝 Our Core Values</h2>
+            <ul class="values-list">
+              <li>🔹 **Excellence** ✨ – Highest standards of German education.</li>
+              <li>🔹 **Accessibility** 🌍 – Flexible schedules & online/offline learning.</li>
+              <li>🔹 **Empowerment** 🚀 – Building confidence through language.</li>
+              <li>🔹 **Community** 💬 – A strong, interactive learning network.</li>
+            </ul>
+          </div>
+    
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Welcome to German Gyan! 🌟</p>
-      <h1 class="title">📩 Get Started Now!</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Why Choose German Gyan?</h2>
-            <div class="article-container">
-          
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3 onclick="toggleCard(event, 'infoCard1')">Expertise in Multilingual Teaching</h3>
-                </div>
-          
-                <!-- Unique Floating Card -->
-                <div id="infoCard1" class="floating-card">
-                  <span class="close-btn" onclick="closeCard('infoCard1')">&times;</span>
-                  <h3>Expertise in Multilingual Teaching</h3>
-                  <p>We specialize in teaching German from Hindi, English, Malayalam, and even German to German! If you know any one of these languages, learning German becomes easy and enjoyable. ✨</p>
-                </div>
-              </article>
-          
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3 onclick="toggleCard(event, 'infoCard2')">Flexible Learning Schedules</h3>
-                </div>
-          
-                <div id="infoCard2" class="floating-card">
-                  <span class="close-btn" onclick="closeCard('infoCard2')">&times;</span>
-                  <h3>Flexible Learning Schedules</h3>
-                  <p>From early morning to midnight, our classes are designed to fit your busy lifestyle.</p>
-                </div>
-              </article>
-          
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3 onclick="toggleCard(event, 'infoCard3')">Comprehensive Learning Resources</h3>
-                </div>
-          
-                <div id="infoCard3" class="floating-card">
-                  <span class="close-btn" onclick="closeCard('infoCard3')">&times;</span>
-                  <h3>Comprehensive Learning Resources</h3>
-                  <p>Gain access to structured lessons, expert instructors, and a wealth of materials to not just learn German, but live it! 🎓</p>
-                </div>
-              </article>
-          
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3 onclick="toggleCard(event, 'infoCard4')">Weekend Free Speaking Sessions</h3>
-                </div>
-          
-                <div id="infoCard4" class="floating-card">
-                  <span class="close-btn" onclick="closeCard('infoCard4')">&times;</span>
-                  <h3>Weekend Free Speaking Sessions</h3>
-                  <p>Enhance your fluency with our complimentary weekend speaking sessions, designed to build confidence in real-life conversations. 🗣️</p>
-                </div>
-              </article>
-          
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3 onclick="toggleCard(event, 'infoCard5')">Learn Anytime, Anywhere</h3>
-                </div>
-          
-                <div id="infoCard5" class="floating-card">
-                  <span class="close-btn" onclick="closeCard('infoCard5')">&times;</span>
-                  <h3>Learn Anytime, Anywhere</h3>
-                  <p>Our YouTube channel offers free lessons, making high-quality German education accessible to everyone! 📺</p>
-                </div>
-              </article>
-          
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3 onclick="toggleCard(event, 'infoCard6')">Exam Preparation & Official Tie-Ups</h3>
-                </div>
-          
-                <div id="infoCard6" class="floating-card">
-                  <span class="close-btn" onclick="closeCard('infoCard6')">&times;</span>
-                  <h3>Exam Preparation & Official Tie-Ups</h3>
-                  <p>We prepare you for Goethe, TELC, and ÖSD exams and have official tie-ups with TELC Exam Centers and ÖSD Exam Centers to help you get certified for global recognition. 🎯</p>
-                </div>
-              </article>
-          
-            </div>
+    
+      <!-- German Language Course Cards -->
+      <div class="language-courses">
+        <h2 class="course-title">🌍 German Language Courses at German Gyan</h2>
+        <p>Master German in **your preferred language** with ease!</p>
+        
+        <div class="course-cards">
+          <div class="course-card" data-aos="fade-up">
+            <h3>⭐ English to German</h3>
           </div>
-          
-          <div class="details-container">
-            <h2 class="experience-sub-title">Master German in Your Preferred Language!</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>⭐ English to German</h3>
-                  <!-- <p>Experienced</p> -->
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>⭐ Hindi to German</h3>
-                  <!-- <p>Experienced</p> -->
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>⭐Malayalam to German</h3>
-                  <!-- <p>Experienced</p> -->
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>⭐ German to German</h3>
-                  <!-- <p>Experienced</p> -->
-                </div>
-              </article>
-
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>⭐Learning easier and accessible</h3>
-                  <!-- <p>Experienced</p> -->
-                </div>
-              </article>
-
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>⭐Easily learn German</h3>
-                  <!-- <p>Experienced</p> -->
-                </div>
-              </article>
-            </div>
+          <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>⭐ Hindi to German</h3>
+          </div>
+          <div class="course-card" data-aos="fade-up" data-aos-delay="400">
+            <h3>⭐ Malayalam to German</h3>
+          </div>
+          <div class="course-card" data-aos="fade-up" data-aos-delay="600">
+            <h3>⭐ German to German</h3>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
     </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
     <section id="courses">
       <p class="section__text__p1">Learn with Us</p>
       <h1 class="title">Our Course Offerings</h1>
@@ -737,7 +623,7 @@
       <img src="./assets/sun.png" id="theme-icon" alt="Toggle Theme">
     </div>
 
-    
+
     <script src="script.js"></script>
 
     
