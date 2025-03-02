@@ -356,21 +356,43 @@ section {
 }
 
 .course-card {
-  background: #007bff;
-  color: white;
+  background: #007bff;  /* Blue background */
+  color: white;  /* White text */
   padding: 15px;
   border-radius: 10px;
   text-align: center;
   width: 250px;
   font-size: 1.2rem;
   font-weight: bold;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
+/* Fix text visibility on default state */
+.course-card h3 {
+  color: white;  /* Ensure text remains visible */
+}
+
+/* Fix for non-hovered cards (if white background) */
+.course-card:not(:hover) {
+  background: #f1f1f1;  /* Light gray background */
+  color: black;  /* Black text */
+}
+
+.course-card:not(:hover) h3 {
+  color: black; /* Ensure text is readable */
+}
+
+/* Hover Effect */
 .course-card:hover {
   transform: translateY(-5px);
-  background: #0056b3;
+  background: #0056b3; /* Darker blue */
+  color: white; /* Keep text white */
 }
+
+.course-card:hover h3 {
+  color: white;  /* Ensure text remains visible */
+}
+
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1024px) {
