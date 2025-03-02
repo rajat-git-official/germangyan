@@ -171,3 +171,29 @@ function toggleDropdown() {
   const dropdown = document.querySelector(".dropdown");
   dropdown.classList.toggle("active");
 }
+
+
+
+
+function sendToWhatsApp(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  // Get form values
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let phone = document.getElementById("phone").value;
+  let message = document.getElementById("message").value;
+
+  // Format message for WhatsApp
+  let whatsappMessage = `*Internship Application*%0A%0A
+  *Name:* ${name}%0A
+  *Email:* ${email}%0A
+  *Phone:* ${phone}%0A
+  *Message:* ${message}`;
+
+  // WhatsApp number (with country code)
+  let whatsappNumber = "919643430783"; // +91 for India
+
+  // Redirect user to WhatsApp with pre-filled message
+  window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
+}
